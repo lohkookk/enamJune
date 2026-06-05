@@ -709,23 +709,28 @@
       window.addEventListener("load", () => {
         const audio = document.getElementById("bgMusic");
         audio.volume = 0.5;
+
         audio
           .play()
           .then(() => {
             document.getElementById("playBtn").textContent = "⏸";
           })
           .catch(() => {
-            document.addEventListener(
-              "click",
-              () => {
-                audio.play();
-                document.getElementById("playBtn").textContent = "⏸";
-              },
-              { once: true },
-            );
+            document.getElementById("playBtn").textContent = "▶";
+            document.getElementById("playBtn").style.animation = "pulse 1.5s ease infinite";
           });
+
+        document.addEventListener(
+          "click",
+          () => {
+            if (audio.paused) {
+              audio.play();
+              document.getElementById("playBtn").textContent = "⏸";
+            }
+          },
+          { once: true },
+        );
       });
-      //   update audio
       document.addEventListener(
         "click",
         () => {
