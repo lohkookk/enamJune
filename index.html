@@ -710,26 +710,16 @@
         const audio = document.getElementById("bgMusic");
         audio.volume = 0.5;
 
-        audio
-          .play()
-          .then(() => {
+        function startMusic() {
+          if (audio.paused) {
+            audio.play();
             document.getElementById("playBtn").textContent = "⏸";
-          })
-          .catch(() => {
-            document.getElementById("playBtn").textContent = "▶";
-            document.getElementById("playBtn").style.animation = "pulse 1.5s ease infinite";
-          });
+          }
+        }
 
-        document.addEventListener(
-          "scroll",
-          () => {
-            if (audio.paused) {
-              audio.play();
-              document.getElementById("playBtn").textContent = "⏸";
-            }
-          },
-          { once: true },
-        );
+        document.addEventListener("scroll", startMusic, { once: true });
+        document.addEventListener("click", startMusic, { once: true });
+        document.addEventListener("touchstart", startMusic, { once: true });
       });
       function togglePlay() {
         const audio = document.getElementById("bgMusic");
