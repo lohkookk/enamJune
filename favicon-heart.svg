@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <radialGradient id="heartGrad" cx="45%" cy="38%" r="62%">
+      <stop offset="0%" stop-color="#f9d0df"/>
+      <stop offset="55%" stop-color="#e8859f"/>
+      <stop offset="100%" stop-color="#c1496b"/>
+    </radialGradient>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fce8ef"/>
+      <stop offset="100%" stop-color="#f9d0df"/>
+    </radialGradient>
+  </defs>
+
+  <!-- background circle -->
+  <circle cx="50" cy="50" r="48" fill="url(#bgGrad)"/>
+
+  <!-- heart shadow -->
+  <path d="M50 76 C28 60, 15 48, 15 34 C15 22, 24 14, 35 14 C42 14, 47 18, 50 23 C53 18, 58 14, 65 14 C76 14, 85 22, 85 34 C85 48, 72 60, 50 76Z"
+        fill="#c1496b" opacity="0.18" transform="translate(1.5,2.5)"/>
+
+  <!-- main heart -->
+  <path d="M50 74 C28 58, 16 47, 16 33 C16 21, 25 13, 36 13 C43 13, 48 17, 50 22 C52 17, 57 13, 64 13 C75 13, 84 21, 84 33 C84 47, 72 58, 50 74Z"
+        fill="url(#heartGrad)"/>
+
+  <!-- white highlight -->
+  <ellipse cx="36" cy="26" rx="9" ry="6" fill="#fff" opacity="0.5" transform="rotate(-30,36,26)"/>
+
+  <!-- soft inner line -->
+  <path d="M50 66 C34 52, 24 42, 24 33 C24 25, 30 20, 38 20 C43 20, 47 23, 50 28"
+        fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+
+  <!-- sparkle dots -->
+  <circle cx="74" cy="20" r="2.5" fill="#fff" opacity="0.75"/>
+  <circle cx="79" cy="28" r="1.5" fill="#fff" opacity="0.5"/>
+  <circle cx="69" cy="15" r="1.5" fill="#fff" opacity="0.45"/>
+</svg>
