@@ -721,7 +721,7 @@
           });
 
         document.addEventListener(
-          "click",
+          "scroll",
           () => {
             if (audio.paused) {
               audio.play();
@@ -731,17 +731,6 @@
           { once: true },
         );
       });
-      document.addEventListener(
-        "click",
-        () => {
-          const audio = document.getElementById("bgMusic");
-          if (audio.paused) {
-            audio.play();
-            document.getElementById("playBtn").textContent = "⏸";
-          }
-        },
-        { once: true },
-      );
       function togglePlay() {
         const audio = document.getElementById("bgMusic");
         const btn = document.getElementById("playBtn");
